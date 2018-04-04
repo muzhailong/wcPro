@@ -12,13 +12,13 @@ public class Utils {
 	}
 
 	private static Random random = new Random();
-	private static String str = "abcdefghijklmnopqrstuvwxyz~`!#%^&*_…()[]+=-:'\"|<>,./? \n\t";
+	private static String str = "abcdefghijklmnopqrstuvwxyz~`!"
+			+ "#%^&*_…()[]+=-:'\"|<>,./? \n\t\r0123456789";
 
 	public static void randomFile(String fn, int sz) {
 		File f = new File(fn);
 		StringBuilder sb = new StringBuilder(sz * 2 / 3);
 		BufferedWriter writer = null;
-
 		try {
 			writer = new BufferedWriter(new FileWriter(f));
 			char c = 0;
@@ -38,7 +38,6 @@ public class Utils {
 			}
 		}
 	}
-
 	public static void main(String[] args) {
 		String fn="1.txt";
 		int sz=1024*1024*40;//40M

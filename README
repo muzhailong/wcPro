@@ -1,13 +1,21 @@
 wcPro项目介绍：
-	输入模块：
-		com.in
-		
-		
-		
-	核心处理模块：
-		com.core
-		
-		
-		
-	输出模块：
-		com.out
+	wcPro有6个模块分别功能与接口如下：
+		com.param:
+			参数解析模块,向com.ui,com.in提供输入接口
+		com.in:
+			输入模块，向com.core提供获取单词的接口
+		com.core:
+			核心模块，通过com.in提供的单词，进行保存统计，排序，
+			然后向com.out模块提供前100的单词
+		com.out:
+			输出模块，主要用于从com.core中获取数据然后输出
+		com.ui:
+			提供一个文件选择器的图形界面，向com.core提供输入文件
+		com.util:
+			工具模块，主要用于为整个项目提供一些工具方法
+
+小组分工：
+	mzl:com.core,com.in,com.ui
+	dgf:com.out
+	wjz:com.param
+	wyz:com.util

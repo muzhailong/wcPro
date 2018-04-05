@@ -82,9 +82,13 @@ public class WordFactory {
 		return nomalArrs[c];
 	}
 	private boolean isLetterChars(char c) {
-		return 'a' <= c && c <= 'z' || c == '-';
+		return 'a' <= c && c <= 'z' || c == '-'||('A'<=c&&c<='Z');
 	}
 	private boolean isShortLine(char c) {
 		return c == '-';
+	}
+	
+	public StringBuilder getSb() {
+		return this.sb;
 	}
 }

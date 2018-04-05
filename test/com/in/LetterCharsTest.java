@@ -22,7 +22,7 @@ public class LetterCharsTest {
 	public LetterCharsTest(char c) {
 		this.c = c;
 		this.wf = new WordFactory();
-		respected = ('a' <= c && c <= 'z') || c == '-';
+		respected = ('a' <= c && c <= 'z') || c == '-'||('A'<=c&&c<='Z');
 	}
 	@Parameters
 	public static Collection addedNumbers() {

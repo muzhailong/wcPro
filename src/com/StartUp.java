@@ -16,7 +16,6 @@ import com.ui.WordSelector;
 
 public class StartUp {
 	static File defaultFile = new File("result.txt");
-
 	public static void start(String[] args) {
 		ParamDecode pd = new ParamDecode(args);
 		Options op = pd.decode();
@@ -61,7 +60,7 @@ public class StartUp {
 	}
 
 	public static void main(String[] args) {
-		args = new String[] { "-x" };
+		args = new String[] { "1.txt" };
 		start(args);
 	}
 }

@@ -1,13 +1,10 @@
 package com.out;
-
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map.Entry;
-
 public class WordPrinter {
 	private List<Entry<String, Integer>> res;
 	private PrintWriter writer;
-
 	public WordPrinter(List<Entry<String, Integer>> res,PrintWriter writer) {
 		this.res = res;
 		this.writer=writer;
@@ -22,5 +19,6 @@ public class WordPrinter {
 		tmp=res.get(sz-1);
 		writer.write(tmp.getKey()+" "+tmp.getValue());
 		writer.flush();
+		writer.close();
 	}
 }

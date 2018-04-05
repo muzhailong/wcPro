@@ -13,7 +13,7 @@ public class WordCounter extends Counter {
 	public void run() {
 		String s=null;
 		while((s=wf.next())!=null) {
-			add(s);
+			add(s.toLowerCase());
 		}
 	}
 }

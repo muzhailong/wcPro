@@ -8,7 +8,6 @@ import com.param.ParamDecode.Options;
 
 //语句覆盖
 public class ParamDecodeTest {
-
 	@Test
 	public void testDecode1() {
 		String[] args = null;
@@ -20,9 +19,7 @@ public class ParamDecodeTest {
 		op=pd.decode();
 		assertEquals(op.isX,true);
 	}
-	
 
-	
 	@Test
 	public void testDecode2() {
 		String[] args = null;

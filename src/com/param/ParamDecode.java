@@ -1,5 +1,7 @@
 package com.param;
 
+import java.io.File;
+
 public class ParamDecode {
 	private String[]args;
 	
@@ -19,11 +21,17 @@ public class ParamDecode {
 			//图形界面
 			op.isX=true;
 		}else if(s.endsWith(".txt")) {
-			op.isConsole=true;
-			op.setFn(s);
+			if(!new File(s).exists()) {
+				op.isErr=true;
+				op.setFn("文件不存在！");
+			}else {
+				op.isConsole=true;
+				op.setFn(s);
+			}
 		}else {
 			//error
 			op.isErr=true;
+			op.setInfo("参数异常！");
 		}
 		return op;
 	}
@@ -33,11 +41,20 @@ public class ParamDecode {
 		public boolean isConsole;
 		public boolean isErr;
 		private String fn;
+		private String info;
 		public void setFn(String fn) {
 			this.fn=fn;
 		}
 		public String getFn() {
 			return fn;
+		}
+		
+		public String getInfo() {
+			return info;
+		}
+		
+		public void setInfo(String info) {
+			this.info=info;
 		}
 	}
 }

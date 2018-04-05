@@ -28,7 +28,7 @@ public abstract class Counter {
 			mp.put(s, 1);
 		}
 	}
-
+	
 	protected void sort() {
 		PriorityQueue<Entry<String,Integer>> pq=
 				new PriorityQueue<Entry<String,Integer>>(mp.size(),
@@ -46,7 +46,7 @@ public abstract class Counter {
 			pq.add(e);
 		}
 		
-		for(int i=0;i<SZ;++i) {
+		for(int i=0;i<SZ&&!pq.isEmpty();++i) {
 			res.add(pq.remove());
 		}
 	}

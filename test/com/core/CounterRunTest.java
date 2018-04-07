@@ -12,7 +12,7 @@ import org.junit.Test;
 import com.in.WordFactory;
 
 public class CounterRunTest {
-	private static Counter wf;
+	private static AbstractCounter wf;
 	private static Map<String, Integer> res;
 
 	@BeforeClass

@@ -9,7 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CounterAddTest {
-	private static Counter counter;
+	private static AbstractCounter counter;
 	private static Map<String, Integer> mp;
 	private static String[] s;
 

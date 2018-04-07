@@ -15,37 +15,37 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class ShortLineTest {
-	private WordFactory wf;
-	private boolean respected;
-	private char c;
+    private WordFactory wf;
+    private boolean respected;
+    private char c;
 
-	public ShortLineTest(char c) {
-		wf = new WordFactory();
-		respected = c == '-';
-		this.c = c;
-	}
+    public ShortLineTest(char c) {
+        wf = new WordFactory();
+        respected = c == '-';
+        this.c = c;
+    }
 
-	@Parameters
-	public static Collection addedNumbers() {
-		char[] nomalChars = "asdjflajls-djf0812-34579~!@!~#@@#$#^$&%^(**&^^)&…FDAFD".toCharArray();
-		List<Character> list = new ArrayList<Character>();
-		for (char c : nomalChars) {
-			list.add(c);
-		}
-		return list;
-	}
+    @Parameters
+    public static Collection addedNumbers() {
+        char[] nomalChars = "asdjflajls-djf0812-34579~!@!~#@@#$#^$&%^(**&^^)&…FDAFD".toCharArray();
+        List<Character> list = new ArrayList<Character>();
+        for (char c : nomalChars) {
+            list.add(c);
+        }
+        return list;
+    }
 
-	@Test
-	public void testShortLine() {
-		Method m;
-		try {
-			m = Class.forName("com.in.WordFactory").getDeclaredMethod("isShortLine", char.class);
-			m.setAccessible(true);
-			assertEquals(m.invoke(wf, c), respected);
-		} catch (NoSuchMethodException | SecurityException | ClassNotFoundException | IllegalAccessException
-				| IllegalArgumentException | InvocationTargetException e) {
-			e.printStackTrace();
-		}
-	}
+    @Test
+    public void testShortLine() {
+        Method m;
+        try {
+            m = Class.forName("com.in.WordFactory").getDeclaredMethod("isShortLine", char.class);
+            m.setAccessible(true);
+            assertEquals(m.invoke(wf, c), respected);
+        } catch (NoSuchMethodException | SecurityException | ClassNotFoundException | IllegalAccessException
+                | IllegalArgumentException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import org.junit.BeforeClass;
@@ -15,7 +14,7 @@ import com.in.WordFactory;
 
 public class CounterSortTest {
 
-	private static Counter wc;
+	private static AbstractCounter wc;
 	private static List<String> resKey;
 	private static List<Integer> resVal;
 

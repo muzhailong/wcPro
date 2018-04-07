@@ -9,6 +9,10 @@ import org.junit.Test;
 
 
 //等价类划分 边界测试
+/**
+ * @author oldBook
+ *测试next方法
+ */
 public class NextTest {
 	private static WordFactory wf;
 	private static String[] res;

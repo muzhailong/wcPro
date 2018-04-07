@@ -18,6 +18,7 @@ public abstract class AbstractCounter {
 
     protected Map<String, Integer> mp;
     protected List<Entry<String, Integer>> res;
+    //比较器
     protected Comparator<Entry<String, Integer>> cmp = new Comparator<Entry<String, Integer>>() {
         @Override
         public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
@@ -34,8 +35,10 @@ public abstract class AbstractCounter {
         res = new ArrayList<Entry<String, Integer>>(SZ);
     }
 
+    //运行比较器
     public abstract void run();
 
+    //添加单词到散列表中
     protected void add(String s) {
         if (mp.containsKey(s)) {
             mp.put(s, mp.get(s) + 1);
@@ -44,6 +47,7 @@ public abstract class AbstractCounter {
         }
     }
 
+    //排序
     protected void sort() {
         defaultSort();
     }
@@ -72,6 +76,7 @@ public abstract class AbstractCounter {
         }
     }
 
+    //获取结果集合
     public List<Entry<String, Integer>> get() {
         sort();
         return res;

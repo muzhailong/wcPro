@@ -40,7 +40,7 @@ public class Utils {
 	}
 	public static void main(String[] args) {
 		String fn="1.txt";
-		int sz=1024*1024*40;//40M
+		int sz=1024*1;// 1k	
 		randomFile(fn,sz);
 	}
 }

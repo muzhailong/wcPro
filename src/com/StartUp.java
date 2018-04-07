@@ -36,6 +36,7 @@ public class StartUp {
         }
     }
 
+    //控制台启动
     public static void consoleStart(Options op) {
         String fn = op.getFn();
         File f = new File(fn);
@@ -50,6 +51,7 @@ public class StartUp {
         }
     }
 
+    //图形界面启动
     public static void xStart() {
         WordSelector ws = new WordSelector();
         File f = ws.select();
@@ -64,6 +66,7 @@ public class StartUp {
         }
     }
 
+    //错误处理
     public static void err() {
         System.out.println("error");
     }

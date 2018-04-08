@@ -96,17 +96,26 @@ public class WordFactory {
     }
     
 
-    //常规字符
+    /**
+     * @param c 常规字符
+     * @return true or false
+     */
     private boolean isNomalChars(char c) {
         return nomalArrs[c];
     }
 
-    //单词字符
+    /**
+     * @param c 单词字符
+     * @return true or false
+     */
     private boolean isLetterChars(char c) {
         return 'a' <= c && c <= 'z' || c == '-' || ('A' <= c && c <= 'Z');
     }
 
-    //短横线
+    /**
+     * @param c 短横线
+     * @return true or false
+     */
     private boolean isShortLine(char c) {
         return c == '-';
     }

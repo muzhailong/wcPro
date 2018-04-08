@@ -2,6 +2,11 @@ package com.param;
 
 import java.io.File;
 
+/**
+ * 参数解析
+ * @author wujingzhe
+ *
+ */
 public class ParamDecode {
 	private String[]args;
 	
@@ -9,7 +14,10 @@ public class ParamDecode {
 		this.args=args;
 	}
 	
-	//参数解析
+	/**
+	 * 参数解析
+	 * @return 参数解析信息
+	 */
 	public Options decode() {
 		int len=args.length;
 		Options op=new Options();
@@ -37,6 +45,11 @@ public class ParamDecode {
 		return op;
 	}
 	
+	/**
+	 * 选项实体类
+	 * @author wujingzhe
+	 *
+	 */
 	public static class Options{
 		public boolean isX;
 		public boolean isConsole;

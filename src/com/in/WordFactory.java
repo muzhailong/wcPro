@@ -17,14 +17,19 @@ public class WordFactory {
     /**
      * 缓冲区大小.
      */
-    private static int CACHE_CAPACITY = 4 * 1024;
+    private static int CACHE_CAPACITY =4 * 1024;
     /**
      * 两个字节的大小，用于保存字符标记.
      */
+    /**
+     * 单词的长度
+     */
+    private static int WORD_LENGTH = 40;
     private static int INT2_LENGTH = 65535;
     private static char[] nomalChars;
     private static boolean[] nomalArrs;
-
+    private static StringBuilder word;
+    
     static {
         nomalChars = new char[] { '~', '`', '!', '#', '%', '^', '&', '*', '_', '…', '(', ')', '[', ']', '+', '=', '-',
                 ':', ';', '\'', '"', '|', '<', '>', ',', '.', '/', '?', ' ', '\n', '\t', '\r', '0', '1', '2', '3', '4',
@@ -33,6 +38,7 @@ public class WordFactory {
         for (char c : nomalChars) {
             nomalArrs[c] = true;
         }
+        word = new StringBuilder(WORD_LENGTH);
     }
 
     private int capacity;
@@ -52,7 +58,10 @@ public class WordFactory {
         this(f, DEFAULT_CAPACITY);
     }
 
-    //将文件内容读取到内存中
+    /**
+     * 将文件内容读取到内存中
+     * @param f  预读文件
+     */
     private void preRead(File f) {
         BufferedReader reader = null;
         try {
@@ -69,9 +78,11 @@ public class WordFactory {
         }
     }
 
-    //获取下一个单词
+    /**
+     * @return 获取下一个单词
+     */
     public String next() {
-        StringBuilder word = new StringBuilder();
+        word.setLength(0);
         int len = sb.length();
         if (pos >= len) {
             return null;

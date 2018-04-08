@@ -59,8 +59,8 @@ public class Utils {
 	 * @param args 命令参数
 	 */
 	public static void main(String[] args) {
-		String fn="1.txt";
-		int sz=1024*1;// 1k	
+		String fn="2.txt";
+		int sz=1024*1024*40;	
 		randomFile(fn,sz);
 	}
 }

@@ -14,8 +14,8 @@ import java.util.Map.Entry;
  *
  */
 public abstract class AbstractCounter {
-    private static final int SZ = 100;
-
+    public static final int SZ = 100;
+    public final int MAP_CAPACITY = 1024 * 512;
     protected Map<String, Integer> mp;
     protected List<Entry<String, Integer>> res;
     /**
@@ -24,6 +24,13 @@ public abstract class AbstractCounter {
     protected Comparator<Entry<String, Integer>> cmp = new Comparator<Entry<String, Integer>>() {
         @Override
         public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+            if(o1==null&&o2==null) {
+                return 0;
+            }else if(o1==null) {
+                return 1;
+            }else if(o2==null) {
+                return -1;
+            }
             int t1 = 0, t2 = 0;
             if ((t1 = o1.getValue().intValue()) != (t2 = o2.getValue().intValue())) {
                 return t2 - t1;
@@ -33,7 +40,7 @@ public abstract class AbstractCounter {
     };
 
     public AbstractCounter() {
-        mp = new HashMap<String, Integer>();
+        mp = new HashMap<String, Integer>(MAP_CAPACITY);
         res = new ArrayList<Entry<String, Integer>>(SZ);
     }
 
@@ -42,10 +49,11 @@ public abstract class AbstractCounter {
      */
     public abstract void run();
 
-   
     /**
      * 添加单词到散列表中
-     * @param s 单词
+     * 
+     * @param s
+     *            单词
      */
     protected void add(String s) {
         if (mp.containsKey(s)) {
@@ -58,7 +66,7 @@ public abstract class AbstractCounter {
     /**
      * 排序
      */
-    protected void sort() {
+    public void sort() {
         defaultSort();
     }
 
@@ -84,6 +92,7 @@ public abstract class AbstractCounter {
             res.add(lt.get(i));
         }
     }
+
     /**
      * @return 获取结果集合
      */

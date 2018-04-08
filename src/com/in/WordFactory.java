@@ -52,6 +52,7 @@ public class WordFactory {
         this(f, DEFAULT_CAPACITY);
     }
 
+    //将文件内容读取到内存中
     private void preRead(File f) {
         BufferedReader reader = null;
         try {
@@ -68,6 +69,7 @@ public class WordFactory {
         }
     }
 
+    //获取下一个单词
     public String next() {
         StringBuilder word = new StringBuilder();
         int len = sb.length();
@@ -92,15 +94,19 @@ public class WordFactory {
         String result = word.substring(0, t + 1);
         return result.length() == 0 ? null : result;
     }
+    
 
+    //常规字符
     private boolean isNomalChars(char c) {
         return nomalArrs[c];
     }
 
+    //单词字符
     private boolean isLetterChars(char c) {
         return 'a' <= c && c <= 'z' || c == '-' || ('A' <= c && c <= 'Z');
     }
 
+    //短横线
     private boolean isShortLine(char c) {
         return c == '-';
     }

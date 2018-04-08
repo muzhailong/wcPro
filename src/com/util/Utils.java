@@ -15,6 +15,7 @@ public class Utils {
 	private static String str = "abcddefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`!"
 			+ "#%^&*_…()[]+=-:'\"|<>,./? \n\t\r0123456789";
 
+	//生成随机文件
 	public static void randomFile(String fn, int sz) {//sz 单位字节
 		File f = new File(fn);
 		StringBuilder sb = new StringBuilder(sz * 2 / 3);

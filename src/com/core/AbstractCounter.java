@@ -70,12 +70,10 @@ public abstract class AbstractCounter {
                 }
             }
         }
-
         for (int i = 0; i < SZ && i < sz; ++i) {
             res.add(lt.get(i));
         }
     }
-
     //获取结果集合
     public List<Entry<String, Integer>> get() {
         sort();

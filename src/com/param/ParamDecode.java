@@ -9,6 +9,7 @@ public class ParamDecode {
 		this.args=args;
 	}
 	
+	//参数解析
 	public Options decode() {
 		int len=args.length;
 		Options op=new Options();

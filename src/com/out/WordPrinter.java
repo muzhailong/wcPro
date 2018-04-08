@@ -4,6 +4,10 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.Map.Entry;
 
+/**
+ * @author oldBook
+ *
+ */
 public class WordPrinter {
   private List<Entry<String, Integer>> res;
   private PrintWriter writer;
@@ -13,7 +17,11 @@ public class WordPrinter {
     this.writer = writer;
   }
 
-  public void print() {
+  //打印结果到指定输出流中
+  /**
+ * 
+ */
+public void print() {
     int sz = res.size();
     Entry<String, Integer> tmp = null;
     for (int i = 0; i < sz - 1; ++i) {

@@ -5,21 +5,26 @@ import java.util.List;
 import java.util.Map.Entry;
 
 /**
- * @author oldBook
+ * 单词打印类
+ * @author dengguofu
  *
  */
 public class WordPrinter {
   private List<Entry<String, Integer>> res;
   private PrintWriter writer;
 
-  public WordPrinter(List<Entry<String, Integer>> res, PrintWriter writer) {
+  /**
+ * @param res 打印的结果集合
+ * @param writer 打印输出流
+ */
+public WordPrinter(List<Entry<String, Integer>> res, PrintWriter writer) {
     this.res = res;
     this.writer = writer;
   }
 
-  //打印结果到指定输出流中
-  /**
- * 
+
+/**
+ * 执行打印操作
  */
 public void print() {
     int sz = res.size();

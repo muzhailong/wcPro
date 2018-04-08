@@ -2,9 +2,10 @@ package com.in;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * 单词的工厂类，用于从指定文本中获取单词.
@@ -17,7 +18,7 @@ public class WordFactory {
     /**
      * 缓冲区大小.
      */
-    private static int CACHE_CAPACITY =4 * 1024;
+    private static int CACHE_CAPACITY = 4 * 1024;
     /**
      * 两个字节的大小，用于保存字符标记.
      */
@@ -29,7 +30,7 @@ public class WordFactory {
     private static char[] nomalChars;
     private static boolean[] nomalArrs;
     private static StringBuilder word;
-    
+
     static {
         nomalChars = new char[] { '~', '`', '!', '#', '%', '^', '&', '*', '_', '…', '(', ')', '[', ']', '+', '=', '-',
                 ':', ';', '\'', '"', '|', '<', '>', ',', '.', '/', '?', ' ', '\n', '\t', '\r', '0', '1', '2', '3', '4',
@@ -57,15 +58,16 @@ public class WordFactory {
     public WordFactory(File f) {
         this(f, DEFAULT_CAPACITY);
     }
-
     /**
      * 将文件内容读取到内存中
-     * @param f  预读文件
+     * 
+     * @param f
+     *            预读文件
      */
     private void preRead(File f) {
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader(f));
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(f), "UTF-8"));
             char[] buf = new char[CACHE_CAPACITY];
             int len = 0;
             while ((len = reader.read(buf)) != -1) {
@@ -105,10 +107,10 @@ public class WordFactory {
         String result = word.substring(0, t + 1);
         return result.length() == 0 ? null : result;
     }
-    
 
     /**
-     * @param c 常规字符
+     * @param c
+     *            常规字符
      * @return true or false
      */
     private boolean isNomalChars(char c) {
@@ -116,7 +118,8 @@ public class WordFactory {
     }
 
     /**
-     * @param c 单词字符
+     * @param c
+     *            单词字符
      * @return true or false
      */
     private boolean isLetterChars(char c) {
@@ -124,7 +127,8 @@ public class WordFactory {
     }
 
     /**
-     * @param c 短横线
+     * @param c
+     *            短横线
      * @return true or false
      */
     private boolean isShortLine(char c) {
@@ -134,7 +138,7 @@ public class WordFactory {
     public StringBuilder getSb() {
         return this.sb;
     }
-    
+
     public int getCapacity() {
         return capacity;
     }

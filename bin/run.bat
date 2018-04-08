@@ -1,0 +1,1 @@
+wcPro.exe 1.txt
